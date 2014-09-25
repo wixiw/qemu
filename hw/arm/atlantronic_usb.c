@@ -221,6 +221,9 @@ static void atlantronic_usb_write32_fifo(struct atlantronic_usb_state *usb, int 
 
 static int32_t atlantronic_usb_write_rx_fifo0_data(struct atlantronic_usb_state *usb, const uint8_t* data, uint16_t length)
 {
+    //HACK HACK HACK
+    //printf("qemu_usb - header id %d header size %d qemu_size %d\n", data[0], data[1], length);
+
 	int i = 0;
 	int count = length >> 2;
 	int max = 4 * count;
